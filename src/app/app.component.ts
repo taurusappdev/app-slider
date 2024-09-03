@@ -22,27 +22,49 @@ export class AppComponent {
     {
       item: "1-80.jpg",
       ext: "",
-      duration: 0
+      duration: 0,
+      frame: false
+
     },
     {
       item: "2-80.jpg",
       ext: "",
-      duration: 0
+      duration: 0,
+      frame: false
+
     },
     {
       item: "5_s.jpeg",
       ext: "",
-      duration: 0
+      duration: 0,
+      frame: false
+
     },
     {
       item: "6-80.jpg",
       ext: "",
-      duration: 0
+      duration: 0,
+      frame: false
+
     },
     {
       item: "video1.mp4",
       ext: "",
-      duration: 0
+      duration: 0,
+      frame: false
+    },
+    {
+      item: "https://lookerstudio.google.com/embed/reporting/739c7683-7959-444f-a8b0-3e6cdf5c56c3/page/p_f6hxkun0fd",
+      ext: "",
+      duration: 0,
+      frame: true
+    },
+    {
+      item: "https://docs.google.com/spreadsheets/d/1W5ijKPLuJWkgV2uHEUWC_HVdM8NYSxiqvvEY2DVP-cM/pubhtml?widget=true&amp;headers=false",
+      ext: "",
+      duration: 0,
+      frame: false,
+      type: "sheet"
     }
   ];
   slideConfig = {
