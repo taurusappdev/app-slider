@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 // Import slick carousel library
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SafePipe } from './pipes/safe-pipe.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

@@ -60,10 +60,10 @@ export class AppComponent {
       frame: true
     },
     {
-      item: "https://docs.google.com/spreadsheets/d/1W5ijKPLuJWkgV2uHEUWC_HVdM8NYSxiqvvEY2DVP-cM/pubhtml?widget=true&amp;headers=false",
+      item: "https://docs.google.com/spreadsheets/d/1KdbMpaU-ttxDbwSPz-ugCvHfKkHK4UG-XHLJcNotlSo/edit?gid=557748956#gid=557748956",
       ext: "",
       duration: 0,
-      frame: false,
+      frame: true,
       type: "sheet"
     }
   ];
@@ -71,8 +71,10 @@ export class AppComponent {
     "slidesToShow": 1,
     "slidesToScroll": 1,
     "autoplay": true,
-    "autoplaySpeed":1500,
-    "dots": true
+    "autoplaySpeed":5000,
+    "dots": true,
+    "adaptativeHeight": true,
+    "pauseOnHover": false
   };
 
   slickInit(e: any) {
@@ -81,11 +83,6 @@ export class AppComponent {
 
   breakpoint(e: any) {
     console.log('breakpoint');
-  }
-
-  afterChange(e:any) {
-    console.log('afterChange');
-
   }
 
   beforeChange(e:any) {
