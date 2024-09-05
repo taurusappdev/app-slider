@@ -1,5 +1,23 @@
-<button #btnPausar (click)="slickModal.slickPause()">Pausar</button>
-<button #btnPlay (click)="slickModal.slickPlay()">Comenzar</button>
+<div class="d-flex mt-1 justify-content-center">
+  <button
+  *ngIf="!isPaused"
+  #btnPausar
+  class="btn btn-light d-flex align-items-center"
+  (click)="slickModal.slickPause()"
+  (click)="onPauseButton()"
+  >
+  <img src="../assets/icons/pause.svg" alt="">
+</button>
+<button
+  *ngIf="isPaused"
+  #btnPlay
+  class="btn btn-light d-flex align-items-center"
+  (click)="slickModal.slickPlay()"
+  (click)="onPauseButton()"
+  >
+  <img src="../assets/icons/play.svg" alt="">
+</button>
+</div>
 
 <ngx-slick-carousel
   class="carousel"

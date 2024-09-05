@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +14,7 @@ export class AppComponent implements OnInit {
 
   public widthScreen: any
   public heigthScreen: any
+  public isPaused: boolean = false
 
   constructor() {
     this.setFileExtension()
@@ -23,6 +23,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.heigthScreen = window.innerHeight
     this.widthScreen = window.innerWidth * 0.90
+  }
+
+  onPauseButton() {
+    this.isPaused = !this.isPaused
   }
 
   slides = [
@@ -114,7 +118,7 @@ export class AppComponent implements OnInit {
     "slidesToShow": 1,
     "slidesToScroll": 1,
     "autoplay": true,
-    "autoplaySpeed":5000,
+    "autoplaySpeed":6000,
     "dots": true,
     "pauseOnHover": false
   };
