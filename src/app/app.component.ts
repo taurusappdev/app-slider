@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { delay } from 'rxjs';
 
 @Component({
@@ -6,16 +6,23 @@ import { delay } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app-slider';
 
   @ViewChild('video') videoHTML!: ElementRef;
   @ViewChild('btnPausar') btnPausar!: ElementRef;
   @ViewChild('btnPlay') btnPlay!: ElementRef;
 
+  public widthScreen: any
+  public heigthScreen: any
 
   constructor() {
     this.setFileExtension()
+  }
+
+  ngOnInit(): void {
+    this.heigthScreen = window.innerHeight
+    this.widthScreen = window.innerWidth * 0.90
   }
 
   slides = [
@@ -60,10 +67,46 @@ export class AppComponent {
       frame: true
     },
     {
-      item: "https://docs.google.com/spreadsheets/d/1KdbMpaU-ttxDbwSPz-ugCvHfKkHK4UG-XHLJcNotlSo/edit?gid=557748956#gid=557748956",
+      item: "https://lookerstudio.google.com/embed/reporting/739c7683-7959-444f-a8b0-3e6cdf5c56c3/page/p_8uhwj24qgd",
       ext: "",
       duration: 0,
-      frame: true,
+      frame: true
+    },
+    {
+      item: "https://lookerstudio.google.com/embed/reporting/739c7683-7959-444f-a8b0-3e6cdf5c56c3/page/p_t5s21rgcfd",
+      ext: "",
+      duration: 0,
+      frame: true
+    },
+    {
+      item: "https://lookerstudio.google.com/embed/reporting/739c7683-7959-444f-a8b0-3e6cdf5c56c3/page/p_w4gf91btfd",
+      ext: "",
+      duration: 0,
+      frame: true
+    },
+    {
+      item: "https://lookerstudio.google.com/embed/reporting/739c7683-7959-444f-a8b0-3e6cdf5c56c3/page/p_jjymilf4id",
+      ext: "",
+      duration: 0,
+      frame: true
+    },
+    {
+      item: "https://lookerstudio.google.com/embed/reporting/739c7683-7959-444f-a8b0-3e6cdf5c56c3/page/p_9lm7da7xjd",
+      ext: "",
+      duration: 0,
+      frame: true
+    },
+    {
+      item: "https://lookerstudio.google.com/embed/reporting/739c7683-7959-444f-a8b0-3e6cdf5c56c3/page/p_aoxls9u6jd",
+      ext: "",
+      duration: 0,
+      frame: true
+    },
+    {
+      item: "https://docs.google.com/spreadsheets/d/1W5ijKPLuJWkgV2uHEUWC_HVdM8NYSxiqvvEY2DVP-cM/edit?gid=1767203708#gid=1767203708",
+      ext: "",
+      duration: 0,
+      frame: false,
       type: "sheet"
     }
   ];
@@ -73,16 +116,15 @@ export class AppComponent {
     "autoplay": true,
     "autoplaySpeed":5000,
     "dots": true,
-    "adaptativeHeight": true,
     "pauseOnHover": false
   };
 
   slickInit(e: any) {
-    console.log('slick initialized');
+
   }
 
   breakpoint(e: any) {
-    console.log('breakpoint');
+
   }
 
   beforeChange(e:any) {
@@ -91,9 +133,9 @@ export class AppComponent {
       element.play()
       const btnPausar = this.btnPausar.nativeElement;
       const btnPlay = this.btnPlay.nativeElement;
-      console.log(btnPausar);
+
       const duration = 1000 * Math.floor(element.duration)
-      console.log(duration);
+
 
       btnPausar.click()
       setTimeout(() => {
@@ -112,7 +154,6 @@ export class AppComponent {
         file.ext = this.getFileExtension(file.item)
       }
     })
-    console.log(this.slides);
 
   }
 
