@@ -120,7 +120,8 @@ export class AppComponent implements OnInit {
     "autoplay": true,
     "autoplaySpeed":6000,
     "dots": true,
-    "pauseOnHover": false
+    "pauseOnHover": false,
+    "lazyLoad": 'ondemand'
   };
 
   slickInit(e: any) {
